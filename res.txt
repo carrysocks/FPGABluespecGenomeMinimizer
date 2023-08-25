@@ -1,0 +1,2 @@
+genome data : 230969440, idx size : 100software shm_open /bdbm31479 returned 3 with errno 0
+bsim PCIe interface init done!

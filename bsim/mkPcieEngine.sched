@@ -1,0 +1,1632 @@
+=== Generated schedule for mkPcieEngine ===
+
+Method schedule
+---------------
+Method: ctrl_user_dataReceive
+Ready signal: pcieCtrl_userWrite2Q.i_notEmpty
+Conflict-free: ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Conflicts: ctrl_user_dataReceive
+ 
+Method: ctrl_user_dataReq
+Ready signal: pcieCtrl_userReadQ2.i_notEmpty
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Conflicts: ctrl_user_dataReq
+ 
+Method: ctrl_user_dataSend
+Ready signal: pcieCtrl_userSendTLPQ.i_notFull
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Conflicts: ctrl_user_dataSend
+ 
+Method: ctrl_user_dmaWriteReq
+Ready signal: pcieCtrl_dmaWriteReqQ.i_notFull
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Conflicts: ctrl_user_dmaWriteReq
+ 
+Method: ctrl_user_dmaWriteData
+Ready signal: pcieCtrl_dmaWriteWordQ.i_notFull
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Sequenced after (restricted): ctrl_user_assertInterrupt
+Conflicts: ctrl_user_dmaWriteData
+ 
+Method: ctrl_user_dmaReadReq
+Ready signal: pcieCtrl_dmaReadReqQ.i_notFull
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Conflicts: ctrl_user_dmaReadReq
+ 
+Method: ctrl_user_dmaReadWord
+Ready signal: pcieCtrl_dmaReadOutRQ.i_notEmpty
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Conflicts: ctrl_user_dmaReadWord
+ 
+Method: ctrl_user_assertInterrupt
+Ready signal: pcie.RDY_user_assertInterrupt &&
+	      (pcieCtrl_dataWordsRemain == 10'd0)
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+Sequenced before (restricted): ctrl_user_dmaWriteData
+ 
+Method: ctrl_user_assertUptrain
+Ready signal: pcie.RDY_user_assertUptrain
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+ 
+Method: ctrl_user_debug_data
+Ready signal: True
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+ 
+Method: pins_rxn_in
+Ready signal: True
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+ 
+Method: pins_rxp_in
+Ready signal: True
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+ 
+Method: pins_txn_out
+Ready signal: True
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+ 
+Method: pins_txp_out
+Ready signal: True
+Conflict-free: ctrl_user_dataReceive,
+	       ctrl_user_dataReq,
+	       ctrl_user_dataSend,
+	       ctrl_user_dmaWriteReq,
+	       ctrl_user_dmaWriteData,
+	       ctrl_user_dmaReadReq,
+	       ctrl_user_dmaReadWord,
+	       ctrl_user_assertInterrupt,
+	       ctrl_user_assertUptrain,
+	       ctrl_user_debug_data,
+	       pins_rxn_in,
+	       pins_rxp_in,
+	       pins_txn_out,
+	       pins_txp_out
+ 
+Rule schedule
+-------------
+Rule: pcieCtrl_configBuffer_serverAdapterA_outData_setFirstCore
+Predicate: pcieCtrl_configBuffer_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_configBuffer_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_outData_setFirstEnq
+Predicate: (! pcieCtrl_configBuffer_serverAdapterA_outDataCore.notEmpty) &&
+	   pcieCtrl_configBuffer_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_outData_enqOnly
+Predicate: pcieCtrl_configBuffer_serverAdapterA_outDataCore.i_notFull &&
+	   (! pcieCtrl_configBuffer_serverAdapterA_outData_deqCalled.whas) &&
+	   pcieCtrl_configBuffer_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_outData_deqOnly
+Predicate: pcieCtrl_configBuffer_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_configBuffer_serverAdapterA_outData_deqCalled.whas &&
+	   (! pcieCtrl_configBuffer_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_outData_enqAndDeq
+Predicate: pcieCtrl_configBuffer_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_configBuffer_serverAdapterA_outDataCore.i_notFull &&
+	   pcieCtrl_configBuffer_serverAdapterA_outData_deqCalled.whas &&
+	   pcieCtrl_configBuffer_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_cnt_finalAdd
+Predicate: pcieCtrl_configBuffer_serverAdapterA_cnt_1.whas ||
+	   pcieCtrl_configBuffer_serverAdapterA_cnt_2.whas ||
+	   pcieCtrl_configBuffer_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_stageReadResponseAlways
+Predicate: pcieCtrl_configBuffer_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_moveToOutFIFO
+Predicate: ((! pcieCtrl_configBuffer_serverAdapterA_s1[0]) ||
+	    pcieCtrl_configBuffer_serverAdapterA_outDataCore.notFull) &&
+	   pcieCtrl_configBuffer_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterA_overRun
+Predicate: pcieCtrl_configBuffer_serverAdapterA_s1[1] &&
+	   (! pcieCtrl_configBuffer_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_outData_setFirstCore
+Predicate: pcieCtrl_configBuffer_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_configBuffer_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_outData_setFirstEnq
+Predicate: (! pcieCtrl_configBuffer_serverAdapterB_outDataCore.notEmpty) &&
+	   pcieCtrl_configBuffer_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_outData_enqOnly
+Predicate: pcieCtrl_configBuffer_serverAdapterB_outDataCore.i_notFull &&
+	   (! pcieCtrl_configBuffer_serverAdapterB_outData_deqCalled.whas) &&
+	   pcieCtrl_configBuffer_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_outData_deqOnly
+Predicate: pcieCtrl_configBuffer_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_configBuffer_serverAdapterB_outData_deqCalled.whas &&
+	   (! pcieCtrl_configBuffer_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_outData_enqAndDeq
+Predicate: pcieCtrl_configBuffer_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_configBuffer_serverAdapterB_outDataCore.i_notFull &&
+	   pcieCtrl_configBuffer_serverAdapterB_outData_deqCalled.whas &&
+	   pcieCtrl_configBuffer_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_cnt_finalAdd
+Predicate: pcieCtrl_configBuffer_serverAdapterB_cnt_1.whas ||
+	   pcieCtrl_configBuffer_serverAdapterB_cnt_2.whas ||
+	   pcieCtrl_configBuffer_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_stageReadResponseAlways
+Predicate: pcieCtrl_configBuffer_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_moveToOutFIFO
+Predicate: ((! pcieCtrl_configBuffer_serverAdapterB_s1[0]) ||
+	    pcieCtrl_configBuffer_serverAdapterB_outDataCore.notFull) &&
+	   pcieCtrl_configBuffer_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_configBuffer_serverAdapterB_overRun
+Predicate: pcieCtrl_configBuffer_serverAdapterB_s1[1] &&
+	   (! pcieCtrl_configBuffer_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_outData_setFirstCore
+Predicate: pcieCtrl_tagMap_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_tagMap_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_outData_setFirstEnq
+Predicate: (! pcieCtrl_tagMap_serverAdapterA_outDataCore.notEmpty) &&
+	   pcieCtrl_tagMap_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_outData_enqOnly
+Predicate: pcieCtrl_tagMap_serverAdapterA_outDataCore.i_notFull &&
+	   (! pcieCtrl_tagMap_serverAdapterA_outData_deqCalled.whas) &&
+	   pcieCtrl_tagMap_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_outData_deqOnly
+Predicate: pcieCtrl_tagMap_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_tagMap_serverAdapterA_outData_deqCalled.whas &&
+	   (! pcieCtrl_tagMap_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_outData_enqAndDeq
+Predicate: pcieCtrl_tagMap_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_tagMap_serverAdapterA_outDataCore.i_notFull &&
+	   pcieCtrl_tagMap_serverAdapterA_outData_deqCalled.whas &&
+	   pcieCtrl_tagMap_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_cnt_finalAdd
+Predicate: pcieCtrl_tagMap_serverAdapterA_cnt_1.whas ||
+	   pcieCtrl_tagMap_serverAdapterA_cnt_2.whas ||
+	   pcieCtrl_tagMap_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_stageReadResponseAlways
+Predicate: pcieCtrl_tagMap_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_moveToOutFIFO
+Predicate: ((! pcieCtrl_tagMap_serverAdapterA_s1[0]) ||
+	    pcieCtrl_tagMap_serverAdapterA_outDataCore.notFull) &&
+	   pcieCtrl_tagMap_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterA_overRun
+Predicate: pcieCtrl_tagMap_serverAdapterA_s1[1] &&
+	   (! pcieCtrl_tagMap_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_outData_setFirstCore
+Predicate: pcieCtrl_tagMap_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_tagMap_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_outData_setFirstEnq
+Predicate: (! pcieCtrl_tagMap_serverAdapterB_outDataCore.notEmpty) &&
+	   pcieCtrl_tagMap_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_outData_enqOnly
+Predicate: pcieCtrl_tagMap_serverAdapterB_outDataCore.i_notFull &&
+	   (! pcieCtrl_tagMap_serverAdapterB_outData_deqCalled.whas) &&
+	   pcieCtrl_tagMap_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_outData_deqOnly
+Predicate: pcieCtrl_tagMap_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_tagMap_serverAdapterB_outData_deqCalled.whas &&
+	   (! pcieCtrl_tagMap_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_outData_enqAndDeq
+Predicate: pcieCtrl_tagMap_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_tagMap_serverAdapterB_outDataCore.i_notFull &&
+	   pcieCtrl_tagMap_serverAdapterB_outData_deqCalled.whas &&
+	   pcieCtrl_tagMap_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_cnt_finalAdd
+Predicate: pcieCtrl_tagMap_serverAdapterB_cnt_1.whas ||
+	   pcieCtrl_tagMap_serverAdapterB_cnt_2.whas ||
+	   pcieCtrl_tagMap_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_stageReadResponseAlways
+Predicate: pcieCtrl_tagMap_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_moveToOutFIFO
+Predicate: ((! pcieCtrl_tagMap_serverAdapterB_s1[0]) ||
+	    pcieCtrl_tagMap_serverAdapterB_outDataCore.notFull) &&
+	   pcieCtrl_tagMap_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_tagMap_serverAdapterB_overRun
+Predicate: pcieCtrl_tagMap_serverAdapterB_s1[1] &&
+	   (! pcieCtrl_tagMap_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_outData_setFirstCore
+Predicate: pcieCtrl_readReorder_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_readReorder_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_outData_setFirstEnq
+Predicate: (! pcieCtrl_readReorder_serverAdapterA_outDataCore.notEmpty) &&
+	   pcieCtrl_readReorder_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_outData_enqOnly
+Predicate: pcieCtrl_readReorder_serverAdapterA_outDataCore.i_notFull &&
+	   (! pcieCtrl_readReorder_serverAdapterA_outData_deqCalled.whas) &&
+	   pcieCtrl_readReorder_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_outData_deqOnly
+Predicate: pcieCtrl_readReorder_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_readReorder_serverAdapterA_outData_deqCalled.whas &&
+	   (! pcieCtrl_readReorder_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_outData_enqAndDeq
+Predicate: pcieCtrl_readReorder_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_readReorder_serverAdapterA_outDataCore.i_notFull &&
+	   pcieCtrl_readReorder_serverAdapterA_outData_deqCalled.whas &&
+	   pcieCtrl_readReorder_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_cnt_finalAdd
+Predicate: pcieCtrl_readReorder_serverAdapterA_cnt_1.whas ||
+	   pcieCtrl_readReorder_serverAdapterA_cnt_2.whas ||
+	   pcieCtrl_readReorder_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_stageReadResponseAlways
+Predicate: pcieCtrl_readReorder_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_moveToOutFIFO
+Predicate: ((! pcieCtrl_readReorder_serverAdapterA_s1[0]) ||
+	    pcieCtrl_readReorder_serverAdapterA_outDataCore.notFull) &&
+	   pcieCtrl_readReorder_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterA_overRun
+Predicate: pcieCtrl_readReorder_serverAdapterA_s1[1] &&
+	   (! pcieCtrl_readReorder_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_outData_setFirstCore
+Predicate: pcieCtrl_readReorder_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_readReorder_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_outData_setFirstEnq
+Predicate: (! pcieCtrl_readReorder_serverAdapterB_outDataCore.notEmpty) &&
+	   pcieCtrl_readReorder_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_outData_enqOnly
+Predicate: pcieCtrl_readReorder_serverAdapterB_outDataCore.i_notFull &&
+	   (! pcieCtrl_readReorder_serverAdapterB_outData_deqCalled.whas) &&
+	   pcieCtrl_readReorder_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_outData_deqOnly
+Predicate: pcieCtrl_readReorder_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_readReorder_serverAdapterB_outData_deqCalled.whas &&
+	   (! pcieCtrl_readReorder_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_outData_enqAndDeq
+Predicate: pcieCtrl_readReorder_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_readReorder_serverAdapterB_outDataCore.i_notFull &&
+	   pcieCtrl_readReorder_serverAdapterB_outData_deqCalled.whas &&
+	   pcieCtrl_readReorder_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_cnt_finalAdd
+Predicate: pcieCtrl_readReorder_serverAdapterB_cnt_1.whas ||
+	   pcieCtrl_readReorder_serverAdapterB_cnt_2.whas ||
+	   pcieCtrl_readReorder_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_stageReadResponseAlways
+Predicate: pcieCtrl_readReorder_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_moveToOutFIFO
+Predicate: ((! pcieCtrl_readReorder_serverAdapterB_s1[0]) ||
+	    pcieCtrl_readReorder_serverAdapterB_outDataCore.notFull) &&
+	   pcieCtrl_readReorder_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readReorder_serverAdapterB_overRun
+Predicate: pcieCtrl_readReorder_serverAdapterB_s1[1] &&
+	   (! pcieCtrl_readReorder_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_readCompletionsb_normalize
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_freeReadTagQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_freeReadTagQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_freeReadTagQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_freeWriteTagQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_freeWriteTagQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_freeWriteTagQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_insertFreeTag
+Predicate: (! ((pcieCtrl_freeReadTagQ_rRdPtr.read + 9'd128) ==
+	       pcieCtrl_freeReadTagQ_rWrPtr.read)) &&
+	   (! ((pcieCtrl_freeWriteTagQ_rRdPtr.read + 9'd128) ==
+	       pcieCtrl_freeWriteTagQ_rWrPtr.read)) &&
+	   (! (pcieCtrl_freeTagCnt == 8'd128))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayReadBurst
+Predicate: pcieCtrl_readBurstQ.i_notEmpty && pcieCtrl_readBurst2Q.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadWordQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadWordQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadWordQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_updateReadBurst1
+Predicate: pcieCtrl_readBurst2Q.i_notEmpty &&
+	   (((! (pcieCtrl_readBurst2Q.first[17:10] == 8'd0)) &&
+	     ((pcieCtrl_readCompletionsb_datav_3 ==
+	       pcieCtrl_readBurst2Q.first[17:10])
+	      ? (pcieCtrl_readCompletionsb_enqoff <
+		 pcieCtrl_readCompletionsb_deqoff) ||
+		((pcieCtrl_readCompletionsb_datav_2 ==
+		  pcieCtrl_readBurst2Q.first[17:10])
+		 ? ((! (pcieCtrl_readCompletionsb_enqoff <=
+			pcieCtrl_readCompletionsb_deqoff)) &&
+		    (pcieCtrl_readCompletionsb_enqoff == 2'd3) &&
+		    (! (pcieCtrl_readCompletionsb_deqoff == 2'd3))) ||
+		   ((pcieCtrl_readCompletionsb_datav_1 ==
+		     pcieCtrl_readBurst2Q.first[17:10])
+		    ? ((! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <= 2'd1)) &&
+		       (pcieCtrl_readCompletionsb_deqoff <= 2'd1)) ||
+		      ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+		       (pcieCtrl_readCompletionsb_deqoff == 2'd0))
+		    : ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+		       (pcieCtrl_readCompletionsb_deqoff == 2'd0)))
+		 : ((pcieCtrl_readCompletionsb_datav_1 ==
+		     pcieCtrl_readBurst2Q.first[17:10])
+		    ? ((! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <= 2'd1)) &&
+		       (pcieCtrl_readCompletionsb_deqoff <= 2'd1)) ||
+		      ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+		       (pcieCtrl_readCompletionsb_deqoff == 2'd0))
+		    : ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+		       (pcieCtrl_readCompletionsb_deqoff == 2'd0))))
+	      : ((pcieCtrl_readCompletionsb_datav_2 ==
+		  pcieCtrl_readBurst2Q.first[17:10])
+		 ? ((pcieCtrl_readCompletionsb_enqoff <
+		     pcieCtrl_readCompletionsb_deqoff) &&
+		    ((pcieCtrl_readCompletionsb_enqoff == 2'd3) ||
+		     (! (pcieCtrl_readCompletionsb_deqoff == 2'd3)))) ||
+		   ((! (pcieCtrl_readCompletionsb_enqoff <=
+			pcieCtrl_readCompletionsb_deqoff)) &&
+		    (pcieCtrl_readCompletionsb_enqoff == 2'd3) &&
+		    (! (pcieCtrl_readCompletionsb_deqoff == 2'd3))) ||
+		   ((pcieCtrl_readCompletionsb_datav_1 ==
+		     pcieCtrl_readBurst2Q.first[17:10])
+		    ? ((pcieCtrl_readCompletionsb_enqoff <
+			pcieCtrl_readCompletionsb_deqoff) &&
+		       ((! (pcieCtrl_readCompletionsb_enqoff <= 2'd1)) ||
+			(pcieCtrl_readCompletionsb_deqoff <= 2'd1))) ||
+		      ((! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <= 2'd1)) &&
+		       (pcieCtrl_readCompletionsb_deqoff <= 2'd1)) ||
+		      ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (((pcieCtrl_readCompletionsb_enqoff <
+			  pcieCtrl_readCompletionsb_deqoff) &&
+			 ((! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) ||
+			  (pcieCtrl_readCompletionsb_deqoff == 2'd0))) ||
+			((! (pcieCtrl_readCompletionsb_enqoff <=
+			     pcieCtrl_readCompletionsb_deqoff)) &&
+			 (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+			 (pcieCtrl_readCompletionsb_deqoff == 2'd0))))
+		    : ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (((pcieCtrl_readCompletionsb_enqoff <
+			  pcieCtrl_readCompletionsb_deqoff) &&
+			 ((! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) ||
+			  (pcieCtrl_readCompletionsb_deqoff == 2'd0))) ||
+			((! (pcieCtrl_readCompletionsb_enqoff <=
+			     pcieCtrl_readCompletionsb_deqoff)) &&
+			 (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+			 (pcieCtrl_readCompletionsb_deqoff == 2'd0)))))
+		 : ((pcieCtrl_readCompletionsb_datav_1 ==
+		     pcieCtrl_readBurst2Q.first[17:10])
+		    ? ((pcieCtrl_readCompletionsb_enqoff <
+			pcieCtrl_readCompletionsb_deqoff) &&
+		       ((! (pcieCtrl_readCompletionsb_enqoff <= 2'd1)) ||
+			(pcieCtrl_readCompletionsb_deqoff <= 2'd1))) ||
+		      ((! (pcieCtrl_readCompletionsb_enqoff <=
+			   pcieCtrl_readCompletionsb_deqoff)) &&
+		       (! (pcieCtrl_readCompletionsb_enqoff <= 2'd1)) &&
+		       (pcieCtrl_readCompletionsb_deqoff <= 2'd1)) ||
+		      ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (((pcieCtrl_readCompletionsb_enqoff <
+			  pcieCtrl_readCompletionsb_deqoff) &&
+			 ((! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) ||
+			  (pcieCtrl_readCompletionsb_deqoff == 2'd0))) ||
+			((! (pcieCtrl_readCompletionsb_enqoff <=
+			     pcieCtrl_readCompletionsb_deqoff)) &&
+			 (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+			 (pcieCtrl_readCompletionsb_deqoff == 2'd0))))
+		    : ((pcieCtrl_readCompletionsb_datav_0 ==
+			pcieCtrl_readBurst2Q.first[17:10]) &&
+		       (((pcieCtrl_readCompletionsb_enqoff <
+			  pcieCtrl_readCompletionsb_deqoff) &&
+			 ((! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) ||
+			  (pcieCtrl_readCompletionsb_deqoff == 2'd0))) ||
+			((! (pcieCtrl_readCompletionsb_enqoff <=
+			     pcieCtrl_readCompletionsb_deqoff)) &&
+			 (! (pcieCtrl_readCompletionsb_enqoff == 2'd0)) &&
+			 (pcieCtrl_readCompletionsb_deqoff == 2'd0)))))))) ||
+	    ((! (pcieCtrl_readCompletionsb_deqoff ==
+		 ((({1'd0, pcieCtrl_readCompletionsb_enqoff} + 3'd1) < 3'd4)
+		  ? {1'd0, pcieCtrl_readCompletionsb_enqoff} + 3'd1
+		  : 3'd0)[1:0])) &&
+	     (pcieCtrl_tagMap_serverAdapterB_cnt .< 3'd3) &&
+	     pcieCtrl_burstUpdReqQ.i_notFull)) &&
+	   (pcieCtrl_freeTagCnt == 8'd128)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_getTagMapReadA
+Predicate: (pcieCtrl_tagMap_serverAdapterB_outDataCore.notEmpty ||
+	    pcieCtrl_tagMap_serverAdapterB_outData_enqData.whas) &&
+	   pcieCtrl_tagMap_serverAdapterB_outData_outData.whas &&
+	   pcieCtrl_tagMapReadAQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayFreeReadTag
+Predicate: (! ((pcieCtrl_freeReadTagQ_rRdPtr.read + 9'd128) ==
+	       pcieCtrl_freeReadTagQ_rWrPtr.read)) &&
+	   pcieCtrl_freeReadTagFQ.i_notEmpty
+Blocking rules: pcieCtrl_insertFreeTag
+ 
+Rule: pcieCtrl_updateReadBurst2
+Predicate: (! (pcieCtrl_readCompletionsb_deqoff ==
+	       pcieCtrl_readCompletionsb_enqoff)) &&
+	   (pcieCtrl_tagMap_serverAdapterB_cnt .< 3'd3) &&
+	   pcieCtrl_tagMapReadAQ.i_notEmpty &&
+	   pcieCtrl_burstUpdReqQ.i_notEmpty &&
+	   (pcieCtrl_tagWordsLeft[29:20] == 10'd0) &&
+	   (pcieCtrl_freeTagCnt == 8'd128)
+Blocking rules: pcieCtrl_updateReadBurst1
+ 
+Rule: pcieCtrl_relayDmaReadrQ
+Predicate: (! (pcieCtrl_dmaReadWordQ_rRdPtr.read ==
+	       pcieCtrl_dmaReadWordQ_rWrPtr.read)) &&
+	   pcieCtrl_dmaReadWordRQ.i_notFull &&
+	   pcieCtrl_dmaReadWordQ_wDataOut.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadTagOrderQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadTagOrderQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadTagOrderQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage
+Predicate: pcieCtrl_doneShifter_stageFifos_6.i_notEmpty &&
+	   pcieCtrl_doneShifter_stageFifos_5.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage_1
+Predicate: pcieCtrl_doneShifter_stageFifos_5.i_notEmpty &&
+	   pcieCtrl_doneShifter_stageFifos_4.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage_2
+Predicate: pcieCtrl_doneShifter_stageFifos_4.i_notEmpty &&
+	   pcieCtrl_doneShifter_stageFifos_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage_3
+Predicate: pcieCtrl_doneShifter_stageFifos_3.i_notEmpty &&
+	   pcieCtrl_doneShifter_stageFifos_2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage_4
+Predicate: pcieCtrl_doneShifter_stageFifos_2.i_notEmpty &&
+	   pcieCtrl_doneShifter_stageFifos_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage_5
+Predicate: pcieCtrl_doneShifter_stageFifos_1.i_notEmpty &&
+	   pcieCtrl_doneShifter_stageFifos_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneShifter_doStage_6
+Predicate: pcieCtrl_doneShifter_stageFifos_0.i_notEmpty &&
+	   (! pcieCtrl_doneShifter_outputFifo_rv.port0__read[128])
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage
+Predicate: pcieCtrl_orderShifter_stageFifos_6.i_notEmpty &&
+	   pcieCtrl_orderShifter_stageFifos_5.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage_1
+Predicate: pcieCtrl_orderShifter_stageFifos_5.i_notEmpty &&
+	   pcieCtrl_orderShifter_stageFifos_4.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage_2
+Predicate: pcieCtrl_orderShifter_stageFifos_4.i_notEmpty &&
+	   pcieCtrl_orderShifter_stageFifos_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage_3
+Predicate: pcieCtrl_orderShifter_stageFifos_3.i_notEmpty &&
+	   pcieCtrl_orderShifter_stageFifos_2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage_4
+Predicate: pcieCtrl_orderShifter_stageFifos_2.i_notEmpty &&
+	   pcieCtrl_orderShifter_stageFifos_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage_5
+Predicate: pcieCtrl_orderShifter_stageFifos_1.i_notEmpty &&
+	   pcieCtrl_orderShifter_stageFifos_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_orderShifter_doStage_6
+Predicate: pcieCtrl_orderShifter_stageFifos_0.i_notEmpty &&
+	   (! pcieCtrl_orderShifter_outputFifo_rv.port0__read[128])
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_outData_setFirstCore
+Predicate: pcieCtrl_doneMap_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_doneMap_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_outData_setFirstEnq
+Predicate: (! pcieCtrl_doneMap_serverAdapterA_outDataCore.notEmpty) &&
+	   pcieCtrl_doneMap_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_outData_enqOnly
+Predicate: pcieCtrl_doneMap_serverAdapterA_outDataCore.i_notFull &&
+	   (! pcieCtrl_doneMap_serverAdapterA_outData_deqCalled.whas) &&
+	   pcieCtrl_doneMap_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_outData_deqOnly
+Predicate: pcieCtrl_doneMap_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_doneMap_serverAdapterA_outData_deqCalled.whas &&
+	   (! pcieCtrl_doneMap_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_outData_enqAndDeq
+Predicate: pcieCtrl_doneMap_serverAdapterA_outDataCore.i_notEmpty &&
+	   pcieCtrl_doneMap_serverAdapterA_outDataCore.i_notFull &&
+	   pcieCtrl_doneMap_serverAdapterA_outData_deqCalled.whas &&
+	   pcieCtrl_doneMap_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_cnt_finalAdd
+Predicate: pcieCtrl_doneMap_serverAdapterA_cnt_1.whas ||
+	   pcieCtrl_doneMap_serverAdapterA_cnt_2.whas ||
+	   pcieCtrl_doneMap_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_stageReadResponseAlways
+Predicate: pcieCtrl_doneMap_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_moveToOutFIFO
+Predicate: ((! pcieCtrl_doneMap_serverAdapterA_s1[0]) ||
+	    pcieCtrl_doneMap_serverAdapterA_outDataCore.notFull) &&
+	   pcieCtrl_doneMap_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterA_overRun
+Predicate: pcieCtrl_doneMap_serverAdapterA_s1[1] &&
+	   (! pcieCtrl_doneMap_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_outData_setFirstCore
+Predicate: pcieCtrl_doneMap_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_doneMap_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_outData_setFirstEnq
+Predicate: (! pcieCtrl_doneMap_serverAdapterB_outDataCore.notEmpty) &&
+	   pcieCtrl_doneMap_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_outData_enqOnly
+Predicate: pcieCtrl_doneMap_serverAdapterB_outDataCore.i_notFull &&
+	   (! pcieCtrl_doneMap_serverAdapterB_outData_deqCalled.whas) &&
+	   pcieCtrl_doneMap_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_outData_deqOnly
+Predicate: pcieCtrl_doneMap_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_doneMap_serverAdapterB_outData_deqCalled.whas &&
+	   (! pcieCtrl_doneMap_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_outData_enqAndDeq
+Predicate: pcieCtrl_doneMap_serverAdapterB_outDataCore.i_notEmpty &&
+	   pcieCtrl_doneMap_serverAdapterB_outDataCore.i_notFull &&
+	   pcieCtrl_doneMap_serverAdapterB_outData_deqCalled.whas &&
+	   pcieCtrl_doneMap_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_cnt_finalAdd
+Predicate: pcieCtrl_doneMap_serverAdapterB_cnt_1.whas ||
+	   pcieCtrl_doneMap_serverAdapterB_cnt_2.whas ||
+	   pcieCtrl_doneMap_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_stageReadResponseAlways
+Predicate: pcieCtrl_doneMap_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_moveToOutFIFO
+Predicate: ((! pcieCtrl_doneMap_serverAdapterB_s1[0]) ||
+	    pcieCtrl_doneMap_serverAdapterB_outDataCore.notFull) &&
+	   pcieCtrl_doneMap_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_doneMap_serverAdapterB_overRun
+Predicate: pcieCtrl_doneMap_serverAdapterB_s1[1] &&
+	   (! pcieCtrl_doneMap_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_applyDoneMap
+Predicate: pcieCtrl_readDoneTagQ.i_notEmpty &&
+	   (pcieCtrl_doneMap_serverAdapterA_cnt .< 3'd3) &&
+	   pcieCtrl_doneShifter_stageFifos_6.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_procDoneShift
+Predicate: pcieCtrl_doneShifter_outputFifo_rv.port1__read[128]
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_shiftOrder
+Predicate: (! (pcieCtrl_dmaReadTagOrderQ_rRdPtr.read ==
+	       pcieCtrl_dmaReadTagOrderQ_rWrPtr.read)) &&
+	   pcieCtrl_orderShifter_stageFifos_6.i_notFull &&
+	   pcieCtrl_dmaReadTagOrderQ_wDataOut.whas &&
+	   pcieCtrl_orderTagBypassQ1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_forwardShiftOrderTagBypass
+Predicate: pcieCtrl_orderTagBypassQ1.i_notEmpty &&
+	   pcieCtrl_orderTagBypassQ2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_forwardShifted
+Predicate: pcieCtrl_orderShifter_outputFifo_rv.port1__read[128] &&
+	   pcieCtrl_orderShiftedQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_compareOrder
+Predicate: pcieCtrl_curOrderTag[128]
+	   ? (((pcieCtrl_curOrderTag[128]
+		? pcieCtrl_curOrderTag[127:0]
+		: (_ :: Bit 128)) &
+	       (pcieCtrl_orderTagMap ^ pcieCtrl_doneTagMap)) ==
+	      128'd0) ||
+	     (pcieCtrl_orderTagBypassQ2.i_notEmpty &&
+	      pcieCtrl_doneReorderedTagQ.i_notFull)
+	   : (pcieCtrl_orderShiftedQ.i_notEmpty &&
+	      (((pcieCtrl_orderShiftedQ.first &
+		 (pcieCtrl_orderTagMap ^ pcieCtrl_doneTagMap)) ==
+		128'd0) ||
+	       (pcieCtrl_orderTagBypassQ2.i_notEmpty &&
+		pcieCtrl_doneReorderedTagQ.i_notFull)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_reqDoneTag
+Predicate: pcieCtrl_doneReorderedTagQ.i_notEmpty &&
+	   (pcieCtrl_doneMap_serverAdapterB_cnt .< 3'd3)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_forwardDoneTag
+Predicate: (pcieCtrl_doneMap_serverAdapterB_outDataCore.notEmpty ||
+	    pcieCtrl_doneMap_serverAdapterB_outData_enqData.whas) &&
+	   pcieCtrl_doneMap_serverAdapterB_outData_outData.whas &&
+	   pcieCtrl_orderedReadDoneTagQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_writeReadBuffer
+Predicate: pcieCtrl_dmaReadWordRQ.i_notEmpty &&
+	   (pcieCtrl_readReorder_serverAdapterA_cnt .< 3'd3) &&
+	   ((! (pcieCtrl_tagWordsLeft[29:20] <= 10'd4)) ||
+	    ((pcieCtrl_tagWordsLeft[39:30] + pcieCtrl_tagWordsLeft[19:10] +
+	      10'd4) <
+	     pcieCtrl_tagWordsLeft[9:0]) ||
+	    pcieCtrl_readDoneTagQ.i_notFull) &&
+	   (! (pcieCtrl_tagWordsLeft[29:20] == 10'd0))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadOutQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadOutQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_dmaReadOutQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_flushReadTag
+Predicate: (pcieCtrl_readFlushTag[9:0] == 10'd0)
+	   ? (! ((pcieCtrl_dmaReadOutCntUp - pcieCtrl_dmaReadOutCntDn) <
+		 8'd56)) ||
+	     (pcieCtrl_orderedReadDoneTagQ.i_notEmpty &&
+	      (pcieCtrl_readReorder_serverAdapterB_cnt .< 3'd3) &&
+	      pcieCtrl_freeReadTagFQ.i_notFull)
+	   : (pcieCtrl_readReorder_serverAdapterB_cnt .< 3'd3)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_flushReadOrdered
+Predicate: (! ((pcieCtrl_dmaReadOutQ_rRdPtr.read + 8'd64) ==
+	       pcieCtrl_dmaReadOutQ_rWrPtr.read)) &&
+	   (pcieCtrl_readReorder_serverAdapterB_outDataCore.notEmpty ||
+	    pcieCtrl_readReorder_serverAdapterB_outData_enqData.whas) &&
+	   pcieCtrl_readReorder_serverAdapterB_outData_outData.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayFlushReadOrdered
+Predicate: (! (pcieCtrl_dmaReadOutQ_rRdPtr.read ==
+	       pcieCtrl_dmaReadOutQ_rWrPtr.read)) &&
+	   pcieCtrl_dmaReadOutRQ.i_notFull &&
+	   pcieCtrl_dmaReadOutQ_wDataOut.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_recvTLP
+Predicate: pcie.RDY_user_receiveData &&
+	   pcie.RDY_user_receiveKeep &&
+	   pcie.RDY_user_receiveUser &&
+	   pcieCtrl_tlpQ.i_notFull && pcieCtrl_tlpKeepQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_0_ma_0_mb_merge
+Predicate: pcieCtrl_sendTLPm_ma_0_ma_0_mb_prio
+	   ? pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_ma_0_ma_0_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_ma_0_ma_0_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_ma_0_ma_0_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_ma_0_ma_0_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_0_ma_1_mb_merge
+Predicate: pcieCtrl_sendTLPm_ma_0_ma_1_mb_prio
+	   ? pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_ma_0_ma_1_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_ma_0_ma_1_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_ma_0_ma_1_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_ma_0_ma_1_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_0_mb_merge
+Predicate: pcieCtrl_sendTLPm_ma_0_mb_prio
+	   ? pcieCtrl_sendTLPm_ma_0_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_ma_0_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_ma_0_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_ma_0_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_ma_0_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_ma_0_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_ma_0_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_ma_0_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_ma_0_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_ma_0_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_ma_0_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_ma_0_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_0_ma1
+Predicate: pcieCtrl_sendTLPm_ma_0_ma_0_mb_outQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_ma_0_mb_inQ1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_0_ma1_1
+Predicate: pcieCtrl_sendTLPm_ma_0_ma_1_mb_outQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_ma_0_mb_inQ2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_1_ma_0_mb_merge
+Predicate: pcieCtrl_sendTLPm_ma_1_ma_0_mb_prio
+	   ? pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_ma_1_ma_0_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_ma_1_ma_0_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_ma_1_ma_0_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_ma_1_ma_0_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_1_ma_1_mb_merge
+Predicate: pcieCtrl_sendTLPm_ma_1_ma_1_mb_prio
+	   ? pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_ma_1_ma_1_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_ma_1_ma_1_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_ma_1_ma_1_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_ma_1_ma_1_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_ma_1_ma_1_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_1_mb_merge
+Predicate: pcieCtrl_sendTLPm_ma_1_mb_prio
+	   ? pcieCtrl_sendTLPm_ma_1_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_ma_1_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_ma_1_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_ma_1_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_ma_1_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_ma_1_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_ma_1_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_ma_1_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_ma_1_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_ma_1_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_ma_1_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_ma_1_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_1_ma1
+Predicate: pcieCtrl_sendTLPm_ma_1_ma_0_mb_outQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_ma_1_mb_inQ1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma_1_ma1_1
+Predicate: pcieCtrl_sendTLPm_ma_1_ma_1_mb_outQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_ma_1_mb_inQ2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_mb_merge
+Predicate: pcieCtrl_sendTLPm_mb_prio
+	   ? pcieCtrl_sendTLPm_mb_inQ2.notEmpty
+	     ? pcieCtrl_sendTLPm_mb_outQ.i_notFull &&
+	       pcieCtrl_sendTLPm_mb_inQ2.i_notEmpty
+	     : ((! pcieCtrl_sendTLPm_mb_inQ1.notEmpty) ||
+		(pcieCtrl_sendTLPm_mb_inQ1.i_notEmpty &&
+		 pcieCtrl_sendTLPm_mb_outQ.i_notFull))
+	   : (pcieCtrl_sendTLPm_mb_inQ1.notEmpty
+	      ? pcieCtrl_sendTLPm_mb_inQ1.i_notEmpty &&
+		pcieCtrl_sendTLPm_mb_outQ.i_notFull
+	      : ((! pcieCtrl_sendTLPm_mb_inQ2.notEmpty) ||
+		 (pcieCtrl_sendTLPm_mb_outQ.i_notFull &&
+		  pcieCtrl_sendTLPm_mb_inQ2.i_notEmpty)))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma1
+Predicate: pcieCtrl_sendTLPm_ma_0_mb_outQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_mb_inQ1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_sendTLPm_ma1_1
+Predicate: pcieCtrl_sendTLPm_ma_1_mb_outQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_mb_inQ2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_userWriteQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_userWriteQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_userWriteQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_userReadQ1_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_userReadQ1_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_userReadQ1_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_procCompletionTLP
+Predicate: (! ((pcieCtrl_dmaReadWordQ_rRdPtr.read + 9'd128) ==
+	       pcieCtrl_dmaReadWordQ_rWrPtr.read)) &&
+	   pcieCtrl_tlpQ.i_notEmpty && pcieCtrl_tlpKeepQ.i_notEmpty &&
+	   (! (pcieCtrl_completionRecvLength == 10'd0))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_filterStatReadTLP
+Predicate: pcieCtrl_tlpQ.i_notEmpty &&
+	   pcieCtrl_tlpKeepQ.i_notEmpty &&
+	   (((pcieCtrl_tlpQ.first[30:24] == 7'b10) ||
+	     (pcieCtrl_tlpQ.first[30:24] == 7'b0))
+	    ? ((pcieCtrl_tlpQ.first[83:66] == 18'd0) ||
+	       (pcieCtrl_tlpQ.first[83:66] == 18'd1) ||
+	       (pcieCtrl_tlpQ.first[83:66] == 18'd4094) ||
+	       (pcieCtrl_tlpQ.first[83:66] == 18'd4095))
+	      ? pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ1.i_notFull
+	      : pcieCtrl_tlp2Q.i_notFull
+	    : (((pcieCtrl_tlpQ.first[30:24] == 7'b1001010) ||
+		(pcieCtrl_tlpQ.first[30:24] == 7'b1101010) ||
+		(pcieCtrl_tlpQ.first[30:24] == 7'b1010) ||
+		(pcieCtrl_tlpQ.first[30:24] == 7'b101010) ||
+		pcieCtrl_tlp2Q.i_notFull) &&
+	       (((! (pcieCtrl_tlpQ.first[30:24] == 7'b1001010)) &&
+		 (! (pcieCtrl_tlpQ.first[30:24] == 7'b1101010)) &&
+		 (! (pcieCtrl_tlpQ.first[30:24] == 7'b1010)) &&
+		 (! (pcieCtrl_tlpQ.first[30:24] == 7'b101010))) ||
+		(pcieCtrl_readBurstQ.i_notFull &&
+		 ((! (pcieCtrl_tlpQ.first[9:0] <= 10'd1)) ||
+		  (! ((pcieCtrl_dmaReadWordQ_rRdPtr.read + 9'd128) ==
+		      pcieCtrl_dmaReadWordQ_rWrPtr.read))))))) &&
+	   (pcieCtrl_completionRecvLength == 10'd0)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_procTLP
+Predicate: pcieCtrl_tlp2Q.i_notEmpty &&
+	   (((pcieCtrl_tlp2Q.first[30:24] == 7'b10) ||
+	     (pcieCtrl_tlp2Q.first[30:24] == 7'b0))
+	    ? (({pcieCtrl_tlp2Q.first[83:66], 2'b0} < 20'd16384) ||
+	       pcieCtrl_userReadQ0.i_notFull) &&
+	      ((! ({pcieCtrl_tlp2Q.first[83:66], 2'b0} < 20'd16384)) ||
+	       ((pcieCtrl_configBuffer_serverAdapterA_cnt .< 3'd3) &&
+		pcieCtrl_ioReadQ.i_notFull))
+	    : (((! (pcieCtrl_tlp2Q.first[30:24] == 7'b1000010)) &&
+		(! (pcieCtrl_tlp2Q.first[30:24] == 7'b1000000))) ||
+	       pcieCtrl_tlp3Q.i_notFull)) &&
+	   (pcieCtrl_completionRecvLength == 10'd0)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayUserReadQ0
+Predicate: (! ((pcieCtrl_userReadQ1_rRdPtr.read + 11'd512) ==
+	       pcieCtrl_userReadQ1_rWrPtr.read)) &&
+	   pcieCtrl_userReadQ0.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayUserReadQ1
+Predicate: (! (pcieCtrl_userReadQ1_rRdPtr.read ==
+	       pcieCtrl_userReadQ1_rWrPtr.read)) &&
+	   pcieCtrl_userReadQ2.i_notFull && pcieCtrl_userReadQ1_wDataOut.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_completeIORead
+Predicate: pcieCtrl_ioReadQ.i_notEmpty &&
+	   (pcieCtrl_configBuffer_serverAdapterA_outDataCore.notEmpty ||
+	    pcieCtrl_configBuffer_serverAdapterA_outData_enqData.whas) &&
+	   pcieCtrl_configBuffer_serverAdapterA_outData_outData.whas &&
+	   pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ1.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_procIOWrite
+Predicate: pcieCtrl_tlp3Q.i_notEmpty &&
+	   ((pcieCtrl_tlp3Q.first[83:66] == 18'd0) ||
+	    (({pcieCtrl_tlp3Q.first[83:66], 2'b0} < 20'd16384)
+	     ? pcieCtrl_configBuffer_serverAdapterA_cnt .< 3'd3
+	     : pcieCtrl_userWrite1Q.i_notFull)) &&
+	   ((! (pcieCtrl_tlp3Q.first[30:24] == 7'b1000010)) ||
+	    pcieCtrl_sendTLPm_ma_0_ma_0_mb_inQ2.i_notFull)
+Blocking rules: pcieCtrl_procTLP
+ 
+Rule: pcieCtrl_relayBufIdxRead
+Predicate: (pcieCtrl_configBuffer_serverAdapterB_outDataCore.notEmpty ||
+	    pcieCtrl_configBuffer_serverAdapterB_outData_enqData.whas) &&
+	   pcieCtrl_configBuffer_serverAdapterB_outData_outData.whas &&
+	   pcieCtrl_bufidxRequestedWriteQ.i_notEmpty &&
+	   (pcieCtrl_bufidxRequestedWriteQ.first
+	    ? pcieCtrl_dmaWriteBufAddrQ.i_notFull
+	    : pcieCtrl_dmaReadBufAddrQ.i_notFull)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_splitDmaReadReq
+Predicate: pcieCtrl_dmaReadReqQ.i_notEmpty && (pcieCtrl_dmaReadWords == 10'd0)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_splitDmaReadReq2
+Predicate: (! (pcieCtrl_freeReadTagQ_rRdPtr.read ==
+	       pcieCtrl_freeReadTagQ_rWrPtr.read)) &&
+	   pcieCtrl_dmaPageReadReqQ.i_notFull &&
+	   pcieCtrl_freeReadTagQ_wDataOut.whas &&
+	   (pcieCtrl_tagMap_serverAdapterA_cnt .< 3'd3) &&
+	   pcieCtrl_bufidxRequestedWriteQ.i_notFull &&
+	   (pcieCtrl_configBuffer_serverAdapterB_cnt .< 3'd3) &&
+	   (! (pcieCtrl_dmaReadWords == 10'd0))
+Blocking rules: pcieCtrl_splitDmaWriteReq2
+ 
+Rule: pcieCtrl_generateDmaReadTLP
+Predicate: (! ((pcieCtrl_dmaReadTagOrderQ_rRdPtr.read + 9'd128) ==
+	       pcieCtrl_dmaReadTagOrderQ_rWrPtr.read)) &&
+	   pcieCtrl_dmaPageReadReqQ.i_notEmpty &&
+	   pcieCtrl_dmaReadBufAddrQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_ma_0_ma_1_mb_inQ2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_splitDmaWriteReq
+Predicate: pcieCtrl_dmaWriteReqQ.i_notEmpty &&
+	   (pcieCtrl_dmaSendWords == 10'd0)
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_busyWriteTagQ_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_busyWriteTagQ_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_busyWriteTagQ_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayFreeWriteTag
+Predicate: (! (pcieCtrl_freeWriteTagQ_rRdPtr.read ==
+	       pcieCtrl_freeWriteTagQ_rWrPtr.read)) &&
+	   pcieCtrl_freeWriteTagStageQ.i_notFull &&
+	   pcieCtrl_freeWriteTagQ_wDataOut.whas
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_splitDmaWriteReq2
+Predicate: (! ((pcieCtrl_busyWriteTagQ_rRdPtr.read + 9'd128) ==
+	       pcieCtrl_busyWriteTagQ_rWrPtr.read)) &&
+	   pcieCtrl_bufidxRequestedWriteQ.i_notFull &&
+	   (pcieCtrl_configBuffer_serverAdapterB_cnt .< 3'd3) &&
+	   pcieCtrl_freeWriteTagStageQ.i_notEmpty &&
+	   pcieCtrl_dmaPageWriteReqQ.i_notFull &&
+	   (! (pcieCtrl_dmaSendWords == 10'd0))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_generateHeaderTLP
+Predicate: pcieCtrl_dmaPageWriteReqQ.i_notEmpty &&
+	   pcieCtrl_dmaWriteBufAddrQ.i_notEmpty &&
+	   pcieCtrl_dmaWriteWordQ.i_notEmpty && pcieCtrl_sendTLPQ.i_notFull &&
+	   (pcieCtrl_dataWordsRemain == 10'd0) &&
+	   (! ((pcieCtrl_dmaWriteWordIn - pcieCtrl_dmaWriteWordOut) <
+	       pcieCtrl_dmaPageWriteReqQ.first[17:8]))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_generateDataTLP
+Predicate: pcieCtrl_sendTLPQ.i_notFull &&
+	   ((pcieCtrl_dataWordsRemain <= 10'd1)
+	    ? (! ((pcieCtrl_freeWriteTagQ_rRdPtr.read + 9'd128) ==
+		  pcieCtrl_freeWriteTagQ_rWrPtr.read)) &&
+	      (! (pcieCtrl_busyWriteTagQ_rRdPtr.read ==
+		  pcieCtrl_busyWriteTagQ_rWrPtr.read)) &&
+	      pcieCtrl_busyWriteTagQ_wDataOut.whas
+	    : pcieCtrl_dmaWriteWordQ.i_notEmpty) &&
+	   (! (pcieCtrl_dataWordsRemain == 10'd0))
+Blocking rules: pcieCtrl_insertFreeTag
+ 
+Rule: pcieCtrl_relayTLPm
+Predicate: pcieCtrl_sendTLPQ.i_notFull &&
+	   pcieCtrl_sendTLPm_mb_outQ.i_notEmpty &&
+	   (pcieCtrl_dataWordsRemain == 10'd0)
+Blocking rules: pcieCtrl_generateHeaderTLP
+ 
+Rule: pcieCtrl_relayTLP
+Predicate: pcie.RDY_user_sendData &&
+	   pcie.RDY_user_sendKeep &&
+	   pcie.RDY_user_sendLast && pcieCtrl_sendTLPQ.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayUserSendTLP
+Predicate: pcieCtrl_userSendTLPQ.i_notEmpty &&
+	   pcieCtrl_sendTLPm_ma_1_ma_0_mb_inQ2.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayUserWriteQ
+Predicate: (! ((pcieCtrl_userWriteQ_rRdPtr.read + 11'd512) ==
+	       pcieCtrl_userWriteQ_rWrPtr.read)) &&
+	   pcieCtrl_userWrite1Q.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayUserWrite2Q
+Predicate: (! (pcieCtrl_userWriteQ_rRdPtr.read ==
+	       pcieCtrl_userWriteQ_rWrPtr.read)) &&
+	   pcieCtrl_userWrite2Q.i_notFull && pcieCtrl_userWriteQ_wDataOut.whas
+Blocking rules: (none)
+ 
+Logical execution order: ctrl_user_dataSend,
+			 ctrl_user_dmaWriteReq,
+			 ctrl_user_dmaReadReq,
+			 ctrl_user_assertInterrupt,
+			 ctrl_user_assertUptrain,
+			 ctrl_user_debug_data,
+			 pins_rxn_in,
+			 pins_rxp_in,
+			 pins_txn_out,
+			 pins_txp_out,
+			 pcieCtrl_insertFreeTag,
+			 pcieCtrl_relayReadBurst,
+			 pcieCtrl_updateReadBurst1,
+			 pcieCtrl_relayFreeReadTag,
+			 pcieCtrl_updateReadBurst2,
+			 pcieCtrl_applyDoneMap,
+			 pcieCtrl_forwardShiftOrderTagBypass,
+			 pcieCtrl_compareOrder,
+			 pcieCtrl_reqDoneTag,
+			 pcieCtrl_writeReadBuffer,
+			 pcieCtrl_flushReadTag,
+			 ctrl_user_dmaReadWord,
+			 pcieCtrl_recvTLP,
+			 pcieCtrl_procCompletionTLP,
+			 pcieCtrl_procTLP,
+			 pcieCtrl_relayUserReadQ0,
+			 pcieCtrl_splitDmaReadReq,
+			 pcieCtrl_splitDmaWriteReq,
+			 pcieCtrl_splitDmaWriteReq2,
+			 pcieCtrl_generateHeaderTLP,
+			 ctrl_user_dmaWriteData,
+			 pcieCtrl_relayTLPm,
+			 pcieCtrl_relayTLP,
+			 pcieCtrl_relayUserWriteQ,
+			 pcieCtrl_configBuffer_serverAdapterA_moveToOutFIFO,
+			 pcieCtrl_configBuffer_serverAdapterA_overRun,
+			 pcieCtrl_configBuffer_serverAdapterA_outData_setFirstCore,
+			 pcieCtrl_configBuffer_serverAdapterA_outData_setFirstEnq,
+			 pcieCtrl_configBuffer_serverAdapterB_moveToOutFIFO,
+			 pcieCtrl_configBuffer_serverAdapterB_overRun,
+			 pcieCtrl_configBuffer_serverAdapterB_outData_setFirstCore,
+			 pcieCtrl_configBuffer_serverAdapterB_outData_setFirstEnq,
+			 pcieCtrl_relayBufIdxRead,
+			 pcieCtrl_configBuffer_serverAdapterB_outData_enqOnly,
+			 pcieCtrl_configBuffer_serverAdapterB_outData_deqOnly,
+			 pcieCtrl_configBuffer_serverAdapterB_outData_enqAndDeq,
+			 pcieCtrl_tagMap_serverAdapterA_moveToOutFIFO,
+			 pcieCtrl_tagMap_serverAdapterA_overRun,
+			 pcieCtrl_tagMap_serverAdapterA_outData_setFirstCore,
+			 pcieCtrl_tagMap_serverAdapterA_outData_setFirstEnq,
+			 pcieCtrl_tagMap_serverAdapterA_outData_enqOnly,
+			 pcieCtrl_tagMap_serverAdapterA_outData_deqOnly,
+			 pcieCtrl_tagMap_serverAdapterA_outData_enqAndDeq,
+			 pcieCtrl_tagMap_serverAdapterB_stageReadResponseAlways,
+			 pcieCtrl_tagMap_serverAdapterB_moveToOutFIFO,
+			 pcieCtrl_tagMap_serverAdapterB_overRun,
+			 pcieCtrl_tagMap_serverAdapterB_outData_setFirstCore,
+			 pcieCtrl_tagMap_serverAdapterB_outData_setFirstEnq,
+			 pcieCtrl_getTagMapReadA,
+			 pcieCtrl_tagMap_serverAdapterB_outData_enqOnly,
+			 pcieCtrl_tagMap_serverAdapterB_outData_deqOnly,
+			 pcieCtrl_tagMap_serverAdapterB_outData_enqAndDeq,
+			 pcieCtrl_tagMap_serverAdapterB_cnt_finalAdd,
+			 pcieCtrl_tagMap_serverAdapterB_s1__dreg_update,
+			 pcieCtrl_readReorder_serverAdapterA_stageReadResponseAlways,
+			 pcieCtrl_readReorder_serverAdapterA_moveToOutFIFO,
+			 pcieCtrl_readReorder_serverAdapterA_overRun,
+			 pcieCtrl_readReorder_serverAdapterA_outData_setFirstCore,
+			 pcieCtrl_readReorder_serverAdapterA_outData_setFirstEnq,
+			 pcieCtrl_readReorder_serverAdapterA_outData_enqOnly,
+			 pcieCtrl_readReorder_serverAdapterA_outData_deqOnly,
+			 pcieCtrl_readReorder_serverAdapterA_outData_enqAndDeq,
+			 pcieCtrl_readReorder_serverAdapterA_cnt_finalAdd,
+			 pcieCtrl_readReorder_serverAdapterA_s1__dreg_update,
+			 pcieCtrl_readReorder_serverAdapterB_stageReadResponseAlways,
+			 pcieCtrl_readReorder_serverAdapterB_moveToOutFIFO,
+			 pcieCtrl_readReorder_serverAdapterB_overRun,
+			 pcieCtrl_readReorder_serverAdapterB_outData_setFirstCore,
+			 pcieCtrl_readReorder_serverAdapterB_outData_setFirstEnq,
+			 pcieCtrl_flushReadOrdered,
+			 pcieCtrl_readReorder_serverAdapterB_outData_enqOnly,
+			 pcieCtrl_readReorder_serverAdapterB_outData_deqOnly,
+			 pcieCtrl_readReorder_serverAdapterB_outData_enqAndDeq,
+			 pcieCtrl_readReorder_serverAdapterB_cnt_finalAdd,
+			 pcieCtrl_readReorder_serverAdapterB_s1__dreg_update,
+			 pcieCtrl_readCompletionsb_normalize,
+			 pcieCtrl_freeReadTagQ_portB_read_data,
+			 pcieCtrl_splitDmaReadReq2,
+			 pcieCtrl_configBuffer_serverAdapterB_stageReadResponseAlways,
+			 pcieCtrl_configBuffer_serverAdapterB_cnt_finalAdd,
+			 pcieCtrl_configBuffer_serverAdapterB_s1__dreg_update,
+			 pcieCtrl_tagMap_serverAdapterA_stageReadResponseAlways,
+			 pcieCtrl_tagMap_serverAdapterA_cnt_finalAdd,
+			 pcieCtrl_tagMap_serverAdapterA_s1__dreg_update,
+			 pcieCtrl_freeReadTagQ_portA,
+			 pcieCtrl_freeReadTagQ_portB,
+			 pcieCtrl_freeWriteTagQ_portB_read_data,
+			 pcieCtrl_relayFreeWriteTag,
+			 pcieCtrl_freeWriteTagQ_portB,
+			 pcieCtrl_dmaReadWordQ_portB_read_data,
+			 pcieCtrl_relayDmaReadrQ,
+			 pcieCtrl_dmaReadWordQ_portB,
+			 pcieCtrl_dmaReadTagOrderQ_portB_read_data,
+			 pcieCtrl_shiftOrder,
+			 pcieCtrl_dmaReadTagOrderQ_portB,
+			 pcieCtrl_doneShifter_doStage,
+			 pcieCtrl_doneShifter_doStage_1,
+			 pcieCtrl_doneShifter_doStage_2,
+			 pcieCtrl_doneShifter_doStage_3,
+			 pcieCtrl_doneShifter_doStage_4,
+			 pcieCtrl_doneShifter_doStage_5,
+			 pcieCtrl_doneShifter_doStage_6,
+			 pcieCtrl_procDoneShift,
+			 pcieCtrl_orderShifter_doStage,
+			 pcieCtrl_orderShifter_doStage_1,
+			 pcieCtrl_orderShifter_doStage_2,
+			 pcieCtrl_orderShifter_doStage_3,
+			 pcieCtrl_orderShifter_doStage_4,
+			 pcieCtrl_orderShifter_doStage_5,
+			 pcieCtrl_orderShifter_doStage_6,
+			 pcieCtrl_forwardShifted,
+			 pcieCtrl_doneMap_serverAdapterA_stageReadResponseAlways,
+			 pcieCtrl_doneMap_serverAdapterA_moveToOutFIFO,
+			 pcieCtrl_doneMap_serverAdapterA_overRun,
+			 pcieCtrl_doneMap_serverAdapterA_outData_setFirstCore,
+			 pcieCtrl_doneMap_serverAdapterA_outData_setFirstEnq,
+			 pcieCtrl_doneMap_serverAdapterA_outData_enqOnly,
+			 pcieCtrl_doneMap_serverAdapterA_outData_deqOnly,
+			 pcieCtrl_doneMap_serverAdapterA_outData_enqAndDeq,
+			 pcieCtrl_doneMap_serverAdapterA_cnt_finalAdd,
+			 pcieCtrl_doneMap_serverAdapterA_s1__dreg_update,
+			 pcieCtrl_doneMap_serverAdapterB_stageReadResponseAlways,
+			 pcieCtrl_doneMap_serverAdapterB_moveToOutFIFO,
+			 pcieCtrl_doneMap_serverAdapterB_overRun,
+			 pcieCtrl_doneMap_serverAdapterB_outData_setFirstCore,
+			 pcieCtrl_doneMap_serverAdapterB_outData_setFirstEnq,
+			 pcieCtrl_forwardDoneTag,
+			 pcieCtrl_doneMap_serverAdapterB_outData_enqOnly,
+			 pcieCtrl_doneMap_serverAdapterB_outData_deqOnly,
+			 pcieCtrl_doneMap_serverAdapterB_outData_enqAndDeq,
+			 pcieCtrl_doneMap_serverAdapterB_cnt_finalAdd,
+			 pcieCtrl_doneMap_serverAdapterB_s1__dreg_update,
+			 pcieCtrl_dmaReadOutQ_portB_read_data,
+			 pcieCtrl_relayFlushReadOrdered,
+			 pcieCtrl_dmaReadOutQ_portA,
+			 pcieCtrl_dmaReadOutQ_portB,
+			 pcieCtrl_sendTLPm_ma_0_ma_0_mb_merge,
+			 pcieCtrl_filterStatReadTLP,
+			 ctrl_user_dataReceive,
+			 ctrl_user_dataReq,
+			 pcieCtrl_procIOWrite,
+			 pcieCtrl_configBuffer_serverAdapterA_stageReadResponseAlways,
+			 pcieCtrl_configBuffer_serverAdapterA_s1__dreg_update,
+			 pcieCtrl_dmaReadWordQ_portA,
+			 pcieCtrl_sendTLPm_ma_0_ma_1_mb_merge,
+			 pcieCtrl_completeIORead,
+			 pcieCtrl_generateDmaReadTLP,
+			 pcieCtrl_configBuffer_serverAdapterA_outData_enqOnly,
+			 pcieCtrl_configBuffer_serverAdapterA_outData_deqOnly,
+			 pcieCtrl_configBuffer_serverAdapterA_outData_enqAndDeq,
+			 pcieCtrl_configBuffer_serverAdapterA_cnt_finalAdd,
+			 pcieCtrl_dmaReadTagOrderQ_portA,
+			 pcieCtrl_sendTLPm_ma_0_mb_merge,
+			 pcieCtrl_sendTLPm_ma_0_ma1,
+			 pcieCtrl_sendTLPm_ma_0_ma1_1,
+			 pcieCtrl_sendTLPm_ma_1_ma_0_mb_merge,
+			 pcieCtrl_relayUserSendTLP,
+			 pcieCtrl_sendTLPm_ma_1_ma_1_mb_merge,
+			 pcieCtrl_sendTLPm_ma_1_mb_merge,
+			 pcieCtrl_sendTLPm_ma_1_ma1,
+			 pcieCtrl_sendTLPm_ma_1_ma1_1,
+			 pcieCtrl_sendTLPm_mb_merge,
+			 pcieCtrl_sendTLPm_ma1,
+			 pcieCtrl_sendTLPm_ma1_1,
+			 pcieCtrl_userWriteQ_portB_read_data,
+			 pcieCtrl_relayUserWrite2Q,
+			 pcieCtrl_userWriteQ_portA,
+			 pcieCtrl_userWriteQ_portB,
+			 pcieCtrl_userReadQ1_portB_read_data,
+			 pcieCtrl_relayUserReadQ1,
+			 pcieCtrl_userReadQ1_portA,
+			 pcieCtrl_userReadQ1_portB,
+			 pcieCtrl_busyWriteTagQ_portB_read_data,
+			 pcieCtrl_generateDataTLP,
+			 pcieCtrl_freeWriteTagQ_portA,
+			 pcieCtrl_busyWriteTagQ_portA,
+			 pcieCtrl_busyWriteTagQ_portB
+
+============================================

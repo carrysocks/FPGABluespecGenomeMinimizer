@@ -1,0 +1,314 @@
+=== Generated schedule for mkProjectTop_bsim ===
+
+Rule schedule
+-------------
+Rule: pcieCtrl_receiveDmaRead
+Predicate: ((pcieCtrl_dmaReadBufferOff < 8'd3) ||
+	    pcieCtrl_dmaReadWordQ.i_notFull) &&
+	   (! (pcieCtrl_dmaReadWordCount == 10'd0))
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_receiveIO
+Predicate: pcieCtrl_ioWriteQ.i_notFull && pcieCtrl_ioReadReqQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: pcieCtrl_relayIOReadResp
+Predicate: pcieCtrl_ioReadReqReturnQ.i_notEmpty &&
+	   pcieCtrl_ioReadReqDataQ.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: hwmain_incCycle
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: hwmain_detectVAssignment
+Predicate: hwmain_v_assigned == 2'd1
+Blocking rules: (none)
+ 
+Rule: hwmain_displayCyclesWhenOutQIsThree
+Predicate: hwmain_outQ_count == 256'd7
+Blocking rules: (none)
+ 
+Rule: hwmain_receiveData
+Predicate: pcieCtrl_ioWriteQ.i_notEmpty && hwmain_inQ.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_minimizer
+Predicate: hwmain_inQ.i_notEmpty && hwmain_nextQ.i_notFull
+Blocking rules: hwmain_detectVAssignment
+ 
+Rule: hwmain_devide1
+Predicate: hwmain_nextQ.i_notEmpty &&
+	   hwmain_inQ1_0.i_notFull && hwmain_inQ1_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide2
+Predicate: hwmain_inQ2_0.i_notFull &&
+	   hwmain_inQ1_0.i_notEmpty && hwmain_inQ2_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide2_1
+Predicate: hwmain_inQ2_2.i_notFull &&
+	   hwmain_inQ1_1.i_notEmpty && hwmain_inQ2_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide3
+Predicate: hwmain_inQ3_0.i_notFull &&
+	   hwmain_inQ2_0.i_notEmpty && hwmain_inQ3_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide3_1
+Predicate: hwmain_inQ3_2.i_notFull &&
+	   hwmain_inQ2_1.i_notEmpty && hwmain_inQ3_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide3_2
+Predicate: hwmain_inQ3_4.i_notFull &&
+	   hwmain_inQ2_2.i_notEmpty && hwmain_inQ3_5.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide3_3
+Predicate: hwmain_inQ3_6.i_notFull &&
+	   hwmain_inQ2_3.i_notEmpty && hwmain_inQ3_7.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4
+Predicate: hwmain_inQ4_0.i_notFull &&
+	   hwmain_inQ3_0.i_notEmpty && hwmain_inQ4_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_1
+Predicate: hwmain_inQ4_2.i_notFull &&
+	   hwmain_inQ3_1.i_notEmpty && hwmain_inQ4_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_2
+Predicate: hwmain_inQ4_4.i_notFull &&
+	   hwmain_inQ3_2.i_notEmpty && hwmain_inQ4_5.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_3
+Predicate: hwmain_inQ4_6.i_notFull &&
+	   hwmain_inQ3_3.i_notEmpty && hwmain_inQ4_7.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_4
+Predicate: hwmain_inQ4_8.i_notFull &&
+	   hwmain_inQ3_4.i_notEmpty && hwmain_inQ4_9.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_5
+Predicate: hwmain_inQ4_10.i_notFull &&
+	   hwmain_inQ3_5.i_notEmpty && hwmain_inQ4_11.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_6
+Predicate: hwmain_inQ4_12.i_notFull &&
+	   hwmain_inQ3_6.i_notEmpty && hwmain_inQ4_13.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_devide4_7
+Predicate: hwmain_inQ4_14.i_notFull &&
+	   hwmain_inQ3_7.i_notEmpty && hwmain_inQ4_15.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1
+Predicate: hwmain_inQ4_0.i_notEmpty && hwmain_mergeQ_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_1
+Predicate: hwmain_inQ4_1.i_notEmpty && hwmain_mergeQ_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_2
+Predicate: hwmain_inQ4_2.i_notEmpty && hwmain_mergeQ_2.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_3
+Predicate: hwmain_inQ4_3.i_notEmpty && hwmain_mergeQ_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_4
+Predicate: hwmain_inQ4_4.i_notEmpty && hwmain_mergeQ_4.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_5
+Predicate: hwmain_inQ4_5.i_notEmpty && hwmain_mergeQ_5.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_6
+Predicate: hwmain_inQ4_6.i_notEmpty && hwmain_mergeQ_6.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_7
+Predicate: hwmain_inQ4_7.i_notEmpty && hwmain_mergeQ_7.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_8
+Predicate: hwmain_inQ4_8.i_notEmpty && hwmain_mergeQ_8.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_9
+Predicate: hwmain_inQ4_9.i_notEmpty && hwmain_mergeQ_9.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_10
+Predicate: hwmain_inQ4_10.i_notEmpty && hwmain_mergeQ_10.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_11
+Predicate: hwmain_inQ4_11.i_notEmpty && hwmain_mergeQ_11.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_12
+Predicate: hwmain_inQ4_12.i_notEmpty && hwmain_mergeQ_12.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_13
+Predicate: hwmain_inQ4_13.i_notEmpty && hwmain_mergeQ_13.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_14
+Predicate: hwmain_inQ4_14.i_notEmpty && hwmain_mergeQ_14.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge1_15
+Predicate: hwmain_inQ4_15.i_notEmpty && hwmain_mergeQ_15.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2
+Predicate: hwmain_mergeQ_0.i_notEmpty &&
+	   hwmain_mergeQ_1.i_notEmpty && hwmain_mergeQ2_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_1
+Predicate: hwmain_mergeQ_2.i_notEmpty &&
+	   hwmain_mergeQ_3.i_notEmpty && hwmain_mergeQ2_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_2
+Predicate: hwmain_mergeQ_4.i_notEmpty &&
+	   hwmain_mergeQ_5.i_notEmpty && hwmain_mergeQ2_2.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_3
+Predicate: hwmain_mergeQ_6.i_notEmpty &&
+	   hwmain_mergeQ_7.i_notEmpty && hwmain_mergeQ2_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_4
+Predicate: hwmain_mergeQ_8.i_notEmpty &&
+	   hwmain_mergeQ_9.i_notEmpty && hwmain_mergeQ2_4.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_5
+Predicate: hwmain_mergeQ_10.i_notEmpty &&
+	   hwmain_mergeQ_11.i_notEmpty && hwmain_mergeQ2_5.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_6
+Predicate: hwmain_mergeQ_12.i_notEmpty &&
+	   hwmain_mergeQ_13.i_notEmpty && hwmain_mergeQ2_6.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge2_7
+Predicate: hwmain_mergeQ_14.i_notEmpty &&
+	   hwmain_mergeQ_15.i_notEmpty && hwmain_mergeQ2_7.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge3
+Predicate: hwmain_mergeQ2_0.i_notEmpty &&
+	   hwmain_mergeQ2_1.i_notEmpty && hwmain_mergeQ3_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge3_1
+Predicate: hwmain_mergeQ2_2.i_notEmpty &&
+	   hwmain_mergeQ2_3.i_notEmpty && hwmain_mergeQ3_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge3_2
+Predicate: hwmain_mergeQ2_4.i_notEmpty &&
+	   hwmain_mergeQ2_5.i_notEmpty && hwmain_mergeQ3_2.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge3_3
+Predicate: hwmain_mergeQ2_6.i_notEmpty &&
+	   hwmain_mergeQ2_7.i_notEmpty && hwmain_mergeQ3_3.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge4
+Predicate: hwmain_mergeQ3_0.i_notEmpty &&
+	   hwmain_mergeQ3_1.i_notEmpty && hwmain_mergeQ4_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge4_1
+Predicate: hwmain_mergeQ3_2.i_notEmpty &&
+	   hwmain_mergeQ3_3.i_notEmpty && hwmain_mergeQ4_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge5
+Predicate: hwmain_mergeQ4_0.i_notEmpty &&
+	   hwmain_mergeQ4_1.i_notEmpty && hwmain_mergeQ5.i_notFull
+Blocking rules: (none)
+ 
+Rule: hwmain_merge6
+Predicate: hwmain_mergeQ5.i_notEmpty && hwmain_outQ.i_notFull
+Blocking rules: hwmain_displayCyclesWhenOutQIsThree
+ 
+Logical execution order: pcieCtrl_receiveDmaRead,
+			 pcieCtrl_receiveIO,
+			 pcieCtrl_relayIOReadResp,
+			 hwmain_displayCyclesWhenOutQIsThree,
+			 hwmain_detectVAssignment,
+			 hwmain_incCycle,
+			 hwmain_receiveData,
+			 hwmain_minimizer,
+			 hwmain_devide1,
+			 hwmain_devide2,
+			 hwmain_devide2_1,
+			 hwmain_devide3,
+			 hwmain_devide3_1,
+			 hwmain_devide3_2,
+			 hwmain_devide3_3,
+			 hwmain_devide4,
+			 hwmain_devide4_1,
+			 hwmain_devide4_2,
+			 hwmain_devide4_3,
+			 hwmain_devide4_4,
+			 hwmain_devide4_5,
+			 hwmain_devide4_6,
+			 hwmain_devide4_7,
+			 hwmain_merge1,
+			 hwmain_merge1_1,
+			 hwmain_merge1_2,
+			 hwmain_merge1_3,
+			 hwmain_merge1_4,
+			 hwmain_merge1_5,
+			 hwmain_merge1_6,
+			 hwmain_merge1_7,
+			 hwmain_merge1_8,
+			 hwmain_merge1_9,
+			 hwmain_merge1_10,
+			 hwmain_merge1_11,
+			 hwmain_merge1_12,
+			 hwmain_merge1_13,
+			 hwmain_merge1_14,
+			 hwmain_merge1_15,
+			 hwmain_merge2,
+			 hwmain_merge2_1,
+			 hwmain_merge2_2,
+			 hwmain_merge2_3,
+			 hwmain_merge2_4,
+			 hwmain_merge2_5,
+			 hwmain_merge2_6,
+			 hwmain_merge2_7,
+			 hwmain_merge3,
+			 hwmain_merge3_1,
+			 hwmain_merge3_2,
+			 hwmain_merge3_3,
+			 hwmain_merge4,
+			 hwmain_merge4_1,
+			 hwmain_merge5,
+			 hwmain_merge6
+
+=================================================
